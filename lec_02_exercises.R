@@ -41,3 +41,4 @@ primes = c( 2,  3,  5,  7, 11, 13, 17, 19, 23, 29, 31, 37, 41,
 ## Your code should use nested loops to iterate through the vector of primes and x.
 ##
 
+x = c(3,4,12,19,23,51,61,63,78)
