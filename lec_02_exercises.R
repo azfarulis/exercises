@@ -43,15 +43,25 @@ primes = c( 2,  3,  5,  7, 11, 13, 17, 19, 23, 29, 31, 37, 41,
 
 x = c(3,4,12,19,23,51,61,63,78)
 
-
-# Single loop
 x_notin_primes = c()
 
-for (value in x){
-  if (any(value == primes)){
-      # Do Nothing
+# Single loop
+for (value in x) {
+  if (!any(value == primes)){ 
+    x_notin_primes = c(x_notin_primes, value)
   }
-  else {
+}
+
+# Nested for loop
+for (value in x) {
+  counter = 1
+  for (prime in primes) {
+    if (identical(value, prime)) {
+      break
+    }
+    counter = counter + 1
+  }
+  if (counter == length(primes)) {
     x_notin_primes = c(x_notin_primes, value)
   }
 }
